@@ -7,6 +7,6 @@ COPY . .
 FROM python:3.12-slim
 WORKDIR /app
 COPY --from=build /app /app
-RUN useradd -m appuser
-USER appuser
+RUN useradd -m nonroot
+USER nonroot
 CMD ["python", "app.py"]
